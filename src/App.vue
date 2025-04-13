@@ -508,126 +508,143 @@ body {
 
 @media (max-width: 768px) {
   .header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
   .navigation {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .day-card {
+    padding: 1rem;
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+
+  .day-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .section h3 {
+    font-size: 1.1rem;
   }
 
   .activity-columns {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.5rem 0;
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.section-content {
-  transition: all 0.3s ease;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.print-button {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.print-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.print-icon {
-  font-size: 1.2rem;
-}
-
-/* Print-only content (hidden by default) */
-.print-only-activities {
-  display: none;
-}
-
-/* Print styles */
-@media print {
-  /* Hide everything except print version */
-  .app * {
-    display: none;
+  .activity-card {
+    padding: 0.75rem;
   }
 
-  .print-only-activities {
-    display: block;
-    padding: 20px;
-    max-width: 100%;
+  .art-image img {
+    border-radius: 0;
   }
 
-  .print-only-activities h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: black;
+  .section-header {
+    padding: 0.75rem 0;
   }
 
-  .print-activity-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .header-actions {
+    gap: 0.5rem;
   }
 
-  .print-activity-column h4 {
-    margin-bottom: 10px;
-    color: black;
+  .print-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 1rem;
   }
 
-  .print-activity-card {
-    padding: 15px;
-    border: 1px solid #ccc;
-    break-inside: avoid;
+  .header h1 {
+    font-size: 1.5rem;
   }
 
-  .print-activity-card h5 {
-    margin-bottom: 10px;
-    color: black;
+  .day-card h2 {
+    font-size: 1.2rem;
   }
 
-  .print-activity-card p {
-    color: black;
+  .date {
+    font-size: 0.9rem;
   }
 
-  /* Basic print settings */
-  @page {
-    margin: 2cm;
-    size: portrait;
+  .section h3 {
+    font-size: 1rem;
   }
 
-  body {
-    background: white;
+  .section h4 {
+    font-size: 0.9rem;
+  }
+
+  .activity-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .activity-card p {
+    font-size: 0.85rem;
+  }
+
+  .text, .description {
+    font-size: 0.9rem;
+  }
+
+  .artist {
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Add smooth transitions for mobile interactions */
+@media (hover: none) {
+  .nav-button:active {
+    transform: scale(0.98);
+  }
+
+  .section-header:active {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  .print-button:active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  .nav-button,
+  .toggle-button,
+  .print-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .section-header {
+    padding: 1rem 0;
+  }
+}
+
+/* Prevent text from being too small on mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
   }
 }
 </style>
