@@ -4,5 +4,9 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/vue_holy_week/'
+  base: '/vue_holy_week/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
